@@ -1,0 +1,11 @@
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script>
+  const captainId = '69e4d736e4c51c011771e5c2';
+  const socket = io('http://localhost:3003/locations', {
+    query: { captainId },
+  });
+  socket.on('connect', () => {
+    socket.emit('update_location', { lat: 33.5, lng: 36.3 });
+  });
+  socket.on('location_changed', console.log);
+</script>
