@@ -1,0 +1,7 @@
+- MongoDB is the only persistence layer; no caching layer was added.
+- Socket authentication is simplified: `captainId` is passed via Socket.IO query string for demo purposes.
+-we can use token (to get captainId) if we had authentication
+- Location updates are broadcast using `server.emit` (all connected listeners receive them).
+- For the report, “assigned orders” are orders that have `captainId != null` and status in: `assigned`, `picked_up`, `delivered`.
+- Date filtering in the report uses `createdAt` within the provided periods.
+- Delivered/cancelled orders are not allowed to be assigned or unassigned.

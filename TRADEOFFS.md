@@ -1,0 +1,4 @@
+- Partner authentication is an API key header (simple to implement, not as robust as OAuth/JWT).
+- Location events are broadcast to all listeners for simplicity; production should use rooms (admin room, order room) and authorization.
+- A Docker configuration file is provided, but it was not used during development due to time constraints; MongoDB can run locally or via Docker Compose.
+- Report is implemented as a MongoDB aggregation pipeline to keep it fast and server-side.
